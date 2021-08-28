@@ -9,7 +9,6 @@ const inputDistance = document.querySelector('.form__input--distance');
 const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
-
 class Workout {
   date = new Date();
   id = (Date.now() + '').slice(-10);
@@ -58,9 +57,6 @@ class Cycling extends Workout {
     return this.speed;
   }
 }
-
-const run1 = new Running([39, -12], 12, 22, 150);
-const cycling1 = new Cycling([39, -12], 100, 360, 500);
 
 /////////////////////
 ///////////////////APP
@@ -189,6 +185,8 @@ class App {
     let html = `
     <li class="workout workout--${workout.type}" data-id="${workout.id}">
       <h2 class="workout__title">${workout.description}</h2>
+      <button class="workout__edit-btn">Edit</button>
+      <button class="workout__delete-btn">Delete</button>
       <div class="workout__details">
         <span class="workout__icon">${
           workout.type === 'running' ? '🏃‍♂️' : '🚴‍♀️'
@@ -261,9 +259,9 @@ class App {
     });
   }
 
-  reset(){
-    localStorage.removeItem("workouts");
-    location.reload()
+  reset() {
+    localStorage.removeItem('workouts');
+    location.reload();
   }
 }
 
