@@ -87,19 +87,9 @@ a:visited {
 .workout__title {
   font-size: 1.7rem;
   font-weight: 600;
-  grid-column: 1 / span 2;
+  grid-column: 1 / -1;
 }
 
-.workout__edit-btn{
-  height: 3rem;
-  width: 6rem;
-  margin: auto;
-}
-.workout__delete-btn{
-  height: 3rem;
-  width: 6rem;
-  margin: auto;
-}
 
 .workout__details {
   display: flex;
